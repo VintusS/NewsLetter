@@ -10,6 +10,7 @@ import Foundation
 struct NewsListItem {
     let title: String
     let summary: String?
+    let imageURL: URL?
 }
 
 final class WorldNewsAPIClient {
@@ -57,7 +58,14 @@ final class WorldNewsAPIClient {
                 article["summary"] as? String ??
                 article["text"] as? String
 
-            return NewsListItem(title: title, summary: summary)
+            let imageURL: URL?
+            if let imageURLString = article["image"] as? String {
+                imageURL = URL(string: imageURLString)
+            } else {
+                imageURL = nil
+            }
+
+            return NewsListItem(title: title, summary: summary, imageURL: imageURL)
         }
 
         return items

@@ -13,17 +13,15 @@ extension ViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.newsCellReuseIdentifier, for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: Constants.newsCellReuseIdentifier,
+            for: indexPath
+        ) as? NewsItemCell else {
+            return UITableViewCell()
+        }
+
         let item = newsItems[indexPath.row]
-
-        var content = cell.defaultContentConfiguration()
-        content.text = item.title
-        content.secondaryText = item.summary
-        content.secondaryTextProperties.numberOfLines = 3
-        content.textProperties.numberOfLines = 2
-        cell.contentConfiguration = content
-        cell.selectionStyle = .none
-
+        cell.configure(with: item)
         return cell
     }
 }

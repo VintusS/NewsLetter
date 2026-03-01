@@ -20,30 +20,40 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Top News"
-        configureUI()
+        title = "News Letter"
+        setupView()
+        setupTableView()
+        setupLoadingIndicator()
+        activateConstraints()
 
         Task { [weak self] in
             await self?.loadTopNews()
         }
     }
 
-    // MARK: - UI
-    private func configureUI() {
+    // MARK: - Setup View
+    private func setupView() {
         view.backgroundColor = .systemBackground
+    }
 
+    private func setupTableView() {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.dataSource = self
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 88
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: Constants.newsCellReuseIdentifier)
+        tableView.estimatedRowHeight = 120
+        tableView.separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+        tableView.register(NewsItemCell.self, forCellReuseIdentifier: Constants.newsCellReuseIdentifier)
         view.addSubview(tableView)
+    }
 
+    private func setupLoadingIndicator() {
         loadingIndicator.translatesAutoresizingMaskIntoConstraints = false
         loadingIndicator.hidesWhenStopped = true
         view.addSubview(loadingIndicator)
         loadingIndicator.startAnimating()
+    }
 
+    private func activateConstraints() {
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
