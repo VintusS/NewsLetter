@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		6BBD60EC2F54CE98009C4E97 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 6BBD60EB2F54CE98009C4E97 /* .gitignore */; };
+		6BBD60F02F54CEB2009C4E97 /* .swift.yml in Sources */ = {isa = PBXBuildFile; fileRef = 6BBD60EF2F54CEAA009C4E97 /* .swift.yml */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		6BBD60CC2F54CAAC009C4E97 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -28,6 +33,8 @@
 		6BBD60CB2F54CAAC009C4E97 /* NewsLetterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewsLetterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BBD60D52F54CAAC009C4E97 /* NewsLetterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewsLetterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BBD60EA2F54CB82009C4E97 /* secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = secrets.swift; sourceTree = "<group>"; };
+		6BBD60EB2F54CE98009C4E97 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		6BBD60EF2F54CEAA009C4E97 /* .swift.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swift.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -89,6 +96,8 @@
 		6BBD60AC2F54CAA9009C4E97 = {
 			isa = PBXGroup;
 			children = (
+				6BBD60EF2F54CEAA009C4E97 /* .swift.yml */,
+				6BBD60EB2F54CE98009C4E97 /* .gitignore */,
 				6BBD60E92F54CB74009C4E97 /* Secrets */,
 				6BBD60B72F54CAA9009C4E97 /* NewsLetter */,
 				6BBD60CE2F54CAAC009C4E97 /* NewsLetterTests */,
@@ -235,6 +244,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BBD60EC2F54CE98009C4E97 /* .gitignore in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BBD60F02F54CEB2009C4E97 /* .swift.yml in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
