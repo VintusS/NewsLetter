@@ -1,9 +1,0 @@
-# Xcode user data
-*.xcuserstate
-*.xcuserdatad/
-*.xcuserdata/
-*.xccheckout
-*.xcscmblueprint
-
-# secrets
-/Secrets

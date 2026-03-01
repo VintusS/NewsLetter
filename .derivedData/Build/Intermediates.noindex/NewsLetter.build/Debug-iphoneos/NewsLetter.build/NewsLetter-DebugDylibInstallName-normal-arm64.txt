@@ -1,1 +1,0 @@
-@rpath/NewsLetter.debug.dylib
