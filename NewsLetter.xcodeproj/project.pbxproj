@@ -27,6 +27,7 @@
 		6BBD60B52F54CAA9009C4E97 /* NewsLetter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsLetter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BBD60CB2F54CAAC009C4E97 /* NewsLetterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewsLetterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BBD60D52F54CAAC009C4E97 /* NewsLetterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewsLetterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BBD60EA2F54CB82009C4E97 /* secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = secrets.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -88,6 +89,7 @@
 		6BBD60AC2F54CAA9009C4E97 = {
 			isa = PBXGroup;
 			children = (
+				6BBD60E92F54CB74009C4E97 /* Secrets */,
 				6BBD60B72F54CAA9009C4E97 /* NewsLetter */,
 				6BBD60CE2F54CAAC009C4E97 /* NewsLetterTests */,
 				6BBD60D82F54CAAC009C4E97 /* NewsLetterUITests */,
@@ -103,6 +105,14 @@
 				6BBD60D52F54CAAC009C4E97 /* NewsLetterUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		6BBD60E92F54CB74009C4E97 /* Secrets */ = {
+			isa = PBXGroup;
+			children = (
+				6BBD60EA2F54CB82009C4E97 /* secrets.swift */,
+			);
+			path = Secrets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
