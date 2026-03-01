@@ -25,3 +25,11 @@ extension ViewController: UITableViewDataSource {
         return cell
     }
 }
+
+extension ViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedNewsItem = newsItems[indexPath.row]
+        tableView.deselectRow(at: indexPath, animated: true)
+        onSelectNews?(selectedNewsItem)
+    }
+}

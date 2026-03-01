@@ -14,6 +14,7 @@ class ViewController: UIViewController {
 
     let newsClient = WorldNewsAPIClient()
     var newsItems: [NewsListItem] = []
+    var onSelectNews: ((NewsListItem) -> Void)?
 
     let tableView = UITableView(frame: .zero, style: .plain)
     let loadingIndicator = UIActivityIndicatorView(style: .large)
@@ -39,6 +40,7 @@ class ViewController: UIViewController {
     private func setupTableView() {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 120
         tableView.separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)

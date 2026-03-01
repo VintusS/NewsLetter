@@ -2,7 +2,7 @@
 //  NewsItemCell.swift
 //  NewsLetter
 //
-//  Created by Codex on 01.03.2026.
+//  Created by dragomir.mindrescu on 01.03.2026.
 //
 
 import UIKit
@@ -19,7 +19,6 @@ final class NewsItemCell: UITableViewCell {
     private let summaryLabel = UILabel()
     private let textStack = UIStackView()
     private let contentStack = UIStackView()
-    private var imageTask: URLSessionDataTask?
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -32,8 +31,6 @@ final class NewsItemCell: UITableViewCell {
 
     override func prepareForReuse() {
         super.prepareForReuse()
-        imageTask?.cancel()
-        imageTask = nil
         articleImageView.image = UIImage(systemName: "photo")
         titleLabel.text = nil
         summaryLabel.text = nil
@@ -42,9 +39,10 @@ final class NewsItemCell: UITableViewCell {
     func configure(with item: NewsListItem) {
         titleLabel.text = item.title
         summaryLabel.text = item.summary
-        loadImage(from: item.imageURL)
+        articleImageView.setNewsImage(from: item.imageURL)
     }
 
+    // MARK: - UI Configuration
     private func setupUI() {
         selectionStyle = .none
 
@@ -87,31 +85,5 @@ final class NewsItemCell: UITableViewCell {
             contentStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Constants.padding),
             contentStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Constants.padding),
         ])
-    }
-
-    private func loadImage(from url: URL?) {
-        imageTask?.cancel()
-        imageTask = nil
-        articleImageView.image = UIImage(systemName: "photo")
-
-        guard let url else {
-            return
-        }
-
-        imageTask = URLSession.shared.dataTask(with: url) { [weak self] data, _, _ in
-            guard
-                let self,
-                let data,
-                let image = UIImage(data: data)
-            else {
-                return
-            }
-
-            DispatchQueue.main.async {
-                self.articleImageView.image = image
-            }
-        }
-
-        imageTask?.resume()
     }
 }
