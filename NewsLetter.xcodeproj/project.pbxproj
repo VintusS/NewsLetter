@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6BBD60EC2F54CE98009C4E97 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 6BBD60EB2F54CE98009C4E97 /* .gitignore */; };
 		6BBD60F02F54CEB2009C4E97 /* .swift.yml in Sources */ = {isa = PBXBuildFile; fileRef = 6BBD60EF2F54CEAA009C4E97 /* .swift.yml */; };
+		C1A6600D2E65000100A10001 /* secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBD60EA2F54CB82009C4E97 /* secrets.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -270,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BBD60F02F54CEB2009C4E97 /* .swift.yml in Sources */,
+				C1A6600D2E65000100A10001 /* secrets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
